@@ -18,4 +18,5 @@ You'll need to install the following tools/binaries, as we depend on them for lo
 
 ## `nvm` autoload
 
-We have a `.nvmrc` file which ensures the correct Node version is used in every project. You can configure your terminal to load the correct node version when you `cd` into it. Follow the [Deeper Shell Integration](https://github.com/nvm-sh/nvm/blob/master/README.md#deeper-shell-integration) guide for the shell of your choice (bash, zsh, fish…).
+We have a `.nvmrc` file which ensures the correct Node version is used in every project. 
+You can configure your terminal to load the correct node version when you `cd` into it. Follow the [Deeper Shell Integration](https://github.com/nvm-sh/nvm/blob/master/README.md#deeper-shell-integration) guide for the shell of your choice (bash, zsh, fish…).
