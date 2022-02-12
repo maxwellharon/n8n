@@ -1,0 +1,2 @@
+# smartcollect-pro
+SmartCollect Monorepository
