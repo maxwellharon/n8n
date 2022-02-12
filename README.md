@@ -1,5 +1,5 @@
-# smartcollect-pro
-SmartCollect Monorepository
+# SmartCollect
+This is an end-to-end debt management system focused on streamlining an organization’s debt collection processes.
 
 ## 🔥 Getting started
 
