@@ -1,0 +1,12 @@
+syntax = "proto3";
+package proto;
+import "google/protobuf/empty.proto";
+option go_package = "github.com/crafted-systems/smartcollect-pro/common/proto";
+
+service Health {
+  rpc Health (google.protobuf.Empty) returns (HealthResponse) {}
+}
+
+message HealthResponse {
+  bool ready = 1;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+package proto;
+
+option go_package = "github.com/crafted-systems/smartcollect-pro/user/proto";
+
+// The main service and RPCs exposed
+service user {
+  rpc AMethod (OK) returns (OK) {
+
+  }
+}
+
+message OK {
+  bool ok = 1;
+}
