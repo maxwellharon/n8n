@@ -1,5 +1,5 @@
 export default [{
-    header: 'Apps',
+    header: 'Accounts',
     icon: 'PackageIcon',
     children: [{
             title: 'Task List',

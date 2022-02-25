@@ -1,49 +1,57 @@
 export default [{
-        header: 'User Interface',
+        header: 'Classification',
     },
-    // {
-    //   title: 'Typography',
-    //   route: 'ui-typography',
-    //   icon: 'TypeIcon',
-    // },
-    // {
-    //   title: 'Colors',
-    //   route: 'ui-colors',
-    //   icon: 'DropletIcon',
-    // },
-    // {
-    //   title: 'Feather',
-    //   route: 'ui-feather',
-    //   icon: 'EyeIcon',
-    // },
-    // {
-    //   title: 'Cards',
-    //   icon: 'CreditCardIcon',
-    //   tag: 'new',
-    //   tagVariant: 'light-success',
-    //   children: [
-    //     {
-    //       title: 'Basic',
-    //       route: 'card-basic',
-    //     },
-    //     {
-    //       title: 'Advance',
-    //       route: 'card-advance',
-    //     },
-    //     {
-    //       title: 'Statistics',
-    //       route: 'card-statistic',
-    //     },
-    //     {
-    //       title: 'Analytics',
-    //       route: 'card-analytic',
-    //     },
-    //     {
-    //       title: 'Card Actions',
-    //       route: 'card-action',
-    //     },
-    //   ],
-    // },
+    {
+        title: 'Products',
+        route: 'ui-typography',
+        icon: 'TypeIcon',
+    },
+    {
+        title: 'Product Types',
+        route: 'ui-colors',
+        icon: 'DropletIcon',
+    },
+    {
+        title: 'Segments',
+        // route: 'ui-feather',
+        icon: 'EyeIcon',
+        children: [{
+                title: 'List',
+                route: '',
+            },
+            {
+                title: 'Add/Remove Files',
+                route: '',
+            }
+        ]
+    },
+    {
+        title: 'Skip Trace',
+        icon: 'CreditCardIcon',
+        tag: 'new',
+        tagVariant: 'light-success',
+        children: [{
+                title: 'Source List',
+                // route: 'card-basic',
+            },
+            {
+                title: 'Integrations',
+                // route: 'card-advance',
+            },
+            {
+                title: 'Statistics',
+                route: 'card-statistic',
+            },
+            {
+                title: 'Analytics',
+                route: 'card-analytic',
+            },
+            {
+                title: 'Card Actions',
+                route: 'card-action',
+            },
+        ],
+    },
     // {
     //   title: 'Components',
     //   icon: 'ArchiveIcon',

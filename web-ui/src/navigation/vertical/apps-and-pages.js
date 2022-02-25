@@ -1,20 +1,20 @@
 export default [{
-        header: 'Apps & Pages',
+        header: 'Accounts',
     },
     {
         title: 'Task List',
         route: 'apps-email',
-        icon: 'MailIcon',
+        // icon: 'MailIcon',
     },
     {
         title: 'New Files',
         route: 'apps-chat',
-        icon: 'MessageSquareIcon',
+        // icon: 'MessageSquareIcon',
     },
     {
         title: 'All Files',
         route: 'apps-todo',
-        icon: 'CheckSquareIcon',
+        // icon: 'CheckSquareIcon',
     },
     // {
     //   title: 'Calendar',
