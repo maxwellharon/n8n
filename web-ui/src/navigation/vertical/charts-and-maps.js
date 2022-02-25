@@ -1,5 +1,6 @@
 export default [{
         header: 'Agencies',
+        route: null,
     },
     //   {
     //     title: 'Charts',
@@ -23,7 +24,7 @@ export default [{
     //   },
     {
         title: 'Agency List',
-        route: 'maps-leaflet',
-        icon: 'MapIcon',
+        route: null,
+        icon: 'SpeakerIcon',
     },
 ]

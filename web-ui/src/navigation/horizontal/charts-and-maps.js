@@ -1,9 +1,8 @@
 export default [{
     header: 'Agencies',
-    icon: 'PieChartIcon',
+    icon: 'SpeakerIcon',
     children: [{
         title: 'Agency List',
-        route: 'maps-leaflet',
-        icon: 'MapIcon',
+        route: null,
     }, ],
 }, ]

@@ -3,22 +3,22 @@ export default [{
     icon: 'EditIcon',
     children: [{
             title: 'Portfolio',
-            icon: 'CopyIcon',
+            icon: 'LayersIcon',
             children: [{
                     title: 'Active Files',
-                    route: 'forms-element-input',
+                    route: null,
                 },
                 {
                     title: 'Non Allocated',
-                    route: 'forms-element-input-group',
+                    route: null,
                 },
                 {
                     title: 'Closed',
-                    route: 'forms-element-input-mask',
+                    route: null,
                 },
                 {
                     title: 'Promise to Pay',
-                    route: 'forms-element-textarea',
+                    route: null,
 
                 },
                 // {
@@ -81,84 +81,79 @@ export default [{
         },
         {
             title: 'Promise to Pay',
-            // route: 'form-layout',
-            icon: 'CopyIcon',
+            icon: 'GiftIcon',
             children: [{
                     title: 'Today',
-                    route: '',
+                    route: null,
                 },
                 {
                     title: 'All List',
-                    route: '',
+                    route: null,
                 },
                 {
                     title: 'Payment Plans',
-                    route: '',
+                    route: null,
                 },
             ]
         },
         {
             title: 'Payments',
-            // route: 'form-wizard',
-            icon: 'PackageIcon',
+            route: null,
+            icon: 'CreditCardIcon',
         },
         {
             title: 'Activity',
-            // route: 'form-validation',
-            icon: 'CheckCircleIcon',
+            icon: 'ActivityIcon',
             children: [{
                     title: 'All List',
-                    route: '',
+                    route: null,
                 },
                 {
                     title: 'Summary',
-                    route: '',
+                    route: null,
                 },
                 {
                     title: 'Hourly',
-                    route: '',
+                    route: null,
                 },
             ]
         },
         {
             title: 'Task List',
-            // route: 'form-repeater',
-            icon: 'CopyIcon',
+            icon: 'AlignJustifyIcon',
             children: [{
                     title: 'Full List',
-                    route: '',
+                    route: null,
                 },
                 {
                     title: 'Summary',
-                    route: '',
+                    route: null,
                 },
             ]
         },
         {
             title: 'User Performance',
-            // route: 'table-bs-table',
-            icon: 'ServerIcon',
+            icon: 'BarChartIcon',
             children: [{
                     title: 'By Day',
-                    route: '',
+                    route: null,
                 },
                 {
                     title: 'By Month',
-                    route: '',
+                    route: null,
                 },
             ]
         },
         {
             title: 'Escalations',
-            // route: 'table-good-table',
-            icon: 'GridIcon',
+            icon: 'CornerLeftUpIcon',
             children: [{
                     title: 'Task List',
-                    route: '',
+                    route: null,
                 },
                 {
                     title: 'PTPs',
-                    route: '',
+                    route: null,
                 },
             ]
         },

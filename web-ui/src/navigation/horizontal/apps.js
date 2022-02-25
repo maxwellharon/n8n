@@ -3,18 +3,18 @@ export default [{
     icon: 'PackageIcon',
     children: [{
             title: 'Task List',
-            route: 'apps-email',
-            // icon: 'MailIcon',
+            route: null,
+            icon: 'ListIcon',
         },
         {
             title: 'New Files',
-            route: 'apps-chat',
-            // icon: 'MessageSquareIcon',
+            route: null,
+            icon: 'FilePlusIcon',
         },
         {
             title: 'All Files',
-            route: 'apps-todo',
-            // icon: 'CheckSquareIcon',
+            route: null,
+            icon: 'FileTextIcon',
         },
         // {
         //     title: 'Calendar',

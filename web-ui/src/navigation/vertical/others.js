@@ -3,7 +3,7 @@ export default [{
     },
     {
         title: 'Targets',
-        icon: 'ShieldIcon',
+        icon: 'TargetIcon',
         // acl: {
         action: 'read',
         resource: 'ACL',
@@ -25,7 +25,7 @@ export default [{
     },
     {
         title: 'Users',
-        icon: 'MenuIcon',
+        icon: 'UsersIcon',
         children: [{
                 title: 'List',
                 route: null,
@@ -47,7 +47,7 @@ export default [{
     },
     {
         title: 'Configuration',
-        icon: 'MenuIcon',
+        icon: 'SettingsIcon',
         children: [{
                 title: 'Actions Taken',
                 route: null,
@@ -101,7 +101,7 @@ export default [{
     },
     {
         title: 'Downloads',
-        icon: 'MenuIcon',
+        icon: 'DownloadIcon',
         children: [{
             title: 'Templates',
             route: null,
@@ -109,7 +109,7 @@ export default [{
     },
     {
         title: 'Company',
-        icon: 'MenuIcon',
+        icon: 'BriefcaseIcon',
         children: [{
                 title: 'Setup',
                 route: null,
