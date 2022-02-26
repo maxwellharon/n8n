@@ -115,13 +115,6 @@
           </b-form>
         </validation-observer>
 
-        <b-card-text class="text-center mt-2">
-          <span>New on our platform? </span>
-          <b-link :to="{name:'auth-register-v1'}">
-            <span>Create an account</span>
-          </b-link>
-        </b-card-text>
-
         <!-- <div class="divider my-2">
           <div class="divider-text">
             or
