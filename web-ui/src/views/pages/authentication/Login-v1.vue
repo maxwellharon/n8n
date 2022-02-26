@@ -8,7 +8,7 @@
           <vuexy-logo />
 
           <h2 class="brand-text text-primary ml-1">
-            Vuexy
+            Smartcollect
           </h2>
         </b-link>
 
@@ -26,7 +26,7 @@
         >
           <b-form
             class="auth-login-form mt-2"
-            @submit.prevent
+            @submit.prevent="login"
           >
 
             <!-- email -->
@@ -55,8 +55,10 @@
             <b-form-group>
               <div class="d-flex justify-content-between">
                 <label for="password">Password</label>
-                <b-link :to="{name:'auth-forgot-password-v1'}">
-                  <small>Forgot Password?</small>
+                <b-link>
+                  <small v-ripple.400="'rgba(113, 102, 240, 0.15)'"
+      variant="outline-primary"
+      @click="showAlert">Forgot Password?</small>
                 </b-link>
               </div>
               <validation-provider
@@ -170,6 +172,8 @@ import { togglePasswordVisibility } from '@core/mixins/ui/forms'
 import useJwt from '@/auth/jwt/useJwt'
 import ToastificationContent from '@core/components/toastification/ToastificationContent.vue'
 import { getHomeRouteForLoggedInUser } from '@/auth/utils'
+import Ripple from 'vue-ripple-directive'
+
 
 export default {
   components: {
@@ -189,6 +193,9 @@ export default {
     ValidationProvider,
     ValidationObserver,
   },
+  directives: {
+    Ripple,
+  },
   mixins: [togglePasswordVisibility],
   data() {
     return {
@@ -206,6 +213,15 @@ export default {
     },
   },
   methods: {
+     showAlert() {
+      this.$swal({
+        title: 'Email admin@admin.com to reset password',
+        customClass: {
+          confirmButton: 'btn btn-primary',
+        },
+        buttonsStyling: false,
+      })
+    },
     login() {
       this.$refs.loginForm.validate().then(success => {
         if (success) {

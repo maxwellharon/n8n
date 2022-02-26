@@ -4,17 +4,17 @@ export default [{
     {
         title: 'Products',
         route: 'ui-typography',
-        icon: 'TypeIcon',
+        icon: 'ColumnsIcon',
     },
     {
         title: 'Product Types',
         route: 'ui-colors',
-        icon: 'DropletIcon',
+        icon: 'BoxIcon',
     },
     {
         title: 'Segments',
         // route: 'ui-feather',
-        icon: 'EyeIcon',
+        icon: 'ArchiveIcon',
         children: [{
                 title: 'List',
                 route: '',
@@ -27,7 +27,7 @@ export default [{
     },
     {
         title: 'Skip Trace',
-        icon: 'CreditCardIcon',
+        icon: 'CompassIcon',
         tag: 'new',
         tagVariant: 'light-success',
         children: [{
