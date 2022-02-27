@@ -21,12 +21,14 @@
 
       <!-- Bookmarks Container -->
       <bookmarks />
+        <search-bar />
     </div>
 
     <b-navbar-nav class="nav align-items-center ml-auto">
+    
       <locale />
       <dark-Toggler class="d-none d-lg-block" />
-      <search-bar />
+      
       <notification-dropdown />
       <user-dropdown />
     </b-navbar-nav>

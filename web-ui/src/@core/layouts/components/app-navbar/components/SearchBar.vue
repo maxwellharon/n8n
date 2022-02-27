@@ -1,135 +1,39 @@
 <template>
-  <li class="nav-item nav-search">
-
-    <!-- Icon -->
-    <a
-      href="javascript:void(0)"
-      class="nav-link nav-link-search"
-      @click="showSearchBar = true"
+<b-input-group class="input-group-merge ml-1 w-50">
+  <b-dropdown
+      id="dropdown-1"
+      v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+      text="Case File ID"
+      variant="primary"
     >
-      <feather-icon
-        icon="SearchIcon"
-        size="21"
-      />
-    </a>
+      <b-dropdown-item>MemberNo</b-dropdown-item>
+      <b-dropdown-item>Case File ID</b-dropdown-item>
+      <b-dropdown-item>Names</b-dropdown-item>
+       <b-dropdown-item>Identification</b-dropdown-item>
+        <b-dropdown-item>LoanAccount</b-dropdown-item>
+         <b-dropdown-item>Phones</b-dropdown-item>
+          <b-dropdown-item>Email</b-dropdown-item>
+    </b-dropdown>
 
-    <!-- Input -->
-    <div
-      class="search-input"
-      :class="{'open': showSearchBar}"
-    >
-      <div class="search-input-icon">
-        <feather-icon icon="SearchIcon" />
-      </div>
-      <!-- <input type="text" placeholder="Explore Vuexy...." class="form-control-input"> -->
-      <!-- @keyup.esc="escPressed" -->
-      <!-- @keyup.enter="suggestionSelected" -->
-      <b-form-input
-        v-if="showSearchBar"
-        v-model="searchQuery"
-        placeholder="Explore Vuexy"
-        autofocus
-        autocomplete="off"
-        @keyup.up="increaseIndex(false)"
-        @keyup.down="increaseIndex"
-        @keyup.esc="showSearchBar = false; resetsearchQuery()"
-        @keyup.enter="suggestionSelected"
-        @blur.stop="showSearchBar = false; resetsearchQuery()"
-      />
-      <div
-        class="search-input-close"
-        @click="showSearchBar = false; resetsearchQuery()"
-      >
-        <feather-icon icon="XIcon" />
-      </div>
-
-      <!-- Suggestions List -->
-      <vue-perfect-scrollbar
-        :settings="perfectScrollbarSettings"
-        class="search-list search-list-main scroll-area overflow-hidden"
-        :class="{'show': searchQuery}"
-        tagname="ul"
-      >
-        <li
-          v-for="(suggestion_list, grp_name, grp_index) in filteredData"
-          :key="grp_index"
-          class="suggestions-groups-list"
-        >
-
-          <!-- Group Header -->
-          <p class="suggestion-group-title">
-            <span>
-              {{ title(grp_name) }}
-            </span>
-          </p>
-
-          <!-- Suggestion List of each group -->
-          <ul>
-            <li
-              v-for="(suggestion, index) in suggestion_list"
-              :key="index"
-              class="suggestion-group-suggestion cursor-pointer"
-              :class="{'suggestion-current-selected': currentSelected === `${grp_index}.${index}`}"
-              @mouseenter="currentSelected = `${grp_index}.${index}`"
-              @mousedown.prevent="suggestionSelected(grp_name, suggestion)"
-            >
-              <b-link
-                v-if="grp_name === 'pages'"
-                class="p-0"
-              >
-                <feather-icon
-                  :icon="suggestion.icon"
-                  class="mr-75"
-                />
-                <span class="align-middle">{{ suggestion.title }}</span>
-              </b-link>
-              <template v-else-if="grp_name === 'files'">
-                <div class="d-flex align-items-center">
-                  <b-img
-                    :src="suggestion.icon"
-                    class="mr-1"
-                    height="32"
-                  />
-                  <div>
-                    <p>{{ suggestion.file_name }}</p>
-                    <small>by {{ suggestion.from }}</small>
-                  </div>
-                  <small class="ml-auto">{{ suggestion.size }}</small>
-                </div>
-              </template>
-              <template v-else-if="grp_name === 'contacts'">
-                <div class="d-flex align-items-center">
-                  <b-avatar
-                    :src="suggestion.img"
-                    class="mr-1"
-                    size="32"
-                  />
-                  <div>
-                    <p>{{ suggestion.name }}</p>
-                    <small>{{ suggestion.email }}</small>
-                  </div>
-                  <small class="ml-auto">{{ suggestion.time }}</small>
-                </div>
-              </template>
-            </li>
-
-            <li
-              v-if="!suggestion_list.length && searchQuery"
-              class="suggestion-group-suggestion no-results"
-            >
-              <p>No Results Found.</p>
-            </li>
-          </ul>
-        </li>
-      </vue-perfect-scrollbar>
-    </div>
-  </li>
+              <b-input-group-prepend is-text>
+                <!-- <feather-icon
+                  icon="SearchIcon"
+                  class="text-muted"
+                /> -->
+              </b-input-group-prepend>
+              <b-form-input
+                v-model="searchQuery"
+                placeholder="Search..."
+              />
+            </b-input-group>
 </template>
 
 <script>
 import {
-  BFormInput, BLink, BImg, BAvatar,
+  BFormInput, BLink, BImg, BAvatar, BInputGroup, BInputGroupPrepend, BInputGroupAppend, BFormGroup, BFormTextarea, BDropdown, BDropdownItem
 } from 'bootstrap-vue'
+import Ripple from 'vue-ripple-directive'
+
 import { ref, watch } from '@vue/composition-api'
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 import useAutoSuggest from '@core/components/app-auto-suggest/useAutoSuggest'
@@ -145,6 +49,16 @@ export default {
     BImg,
     BAvatar,
     VuePerfectScrollbar,
+    BInputGroup,
+    BInputGroupPrepend,
+    BInputGroupAppend,
+    BFormGroup,
+    BFormTextarea,
+    BDropdown,
+    BDropdownItem,
+  },
+  directives: {
+    Ripple,
   },
   setup() {
     const showSearchBar = ref(false)
@@ -269,43 +183,4 @@ export default {
 @import '~@core/scss/base/bootstrap-extended/include';
 @import '~@core/scss/base/components/variables-dark';
 
-ul
-{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-p {
-  margin: 0;
-}
-
-/* .app-auto-suggest {
-  position: relative;
-}
-
-.auto-suggest-suggestions-list {
-  box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1);
-  border-radius: 6px;
-  position: absolute;
-  top: calc(100% + 1rem);
-  background-color: white;
-  width: 100%;
-} */
-
-.suggestion-group-title {
-  font-weight: 500;
-  padding: .75rem 1rem .25rem;
-}
-
-.suggestion-group-suggestion {
-  padding: .75rem 1rem
-}
-
-.suggestion-current-selected {
-  background-color: $body-bg;
-
-  .dark-layout & {
-    background-color: $theme-dark-body-bg;
-  }
-}
 </style>
