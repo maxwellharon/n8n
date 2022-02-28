@@ -1,19 +1,18 @@
 <template>
 <b-input-group class="input-group-merge ml-1 w-50">
-  <b-dropdown
-      id="dropdown-1"
-      v-ripple.400="'rgba(255, 255, 255, 0.15)'"
+    <!-- <b-dropdown
+      v-ripple.400="'rgba(186, 191, 199, 0.15)'"
       text="Case File ID"
-      variant="primary"
+      variant="flat-secondary"
     >
-      <b-dropdown-item>MemberNo</b-dropdown-item>
+   <b-dropdown-item>MemberNo</b-dropdown-item>
       <b-dropdown-item>Case File ID</b-dropdown-item>
       <b-dropdown-item>Names</b-dropdown-item>
        <b-dropdown-item>Identification</b-dropdown-item>
         <b-dropdown-item>LoanAccount</b-dropdown-item>
          <b-dropdown-item>Phones</b-dropdown-item>
           <b-dropdown-item>Email</b-dropdown-item>
-    </b-dropdown>
+    </b-dropdown> -->
 
               <b-input-group-prepend is-text>
                 <!-- <feather-icon
@@ -21,6 +20,7 @@
                   class="text-muted"
                 /> -->
               </b-input-group-prepend>
+              
               <b-form-input
                 v-model="searchQuery"
                 placeholder="Search..."
