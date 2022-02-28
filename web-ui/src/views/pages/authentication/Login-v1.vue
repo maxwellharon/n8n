@@ -5,8 +5,8 @@
       <!-- Login v1 -->
       <b-card class="mb-0">
         <b-link class="brand-logo">
-          <vuexy-logo />
-
+          <!-- <vuexy-logo /> -->
+            <img src="@/assets/images/logo/favicon-32x32.png" alt="">
           <h2 class="brand-text text-primary ml-1">
             Smartcollect
           </h2>
@@ -92,16 +92,7 @@
               </validation-provider>
             </b-form-group>
 
-            <!-- checkbox -->
-            <b-form-group>
-              <b-form-checkbox
-                id="remember-me"
-                v-model="status"
-                name="checkbox-1"
-              >
-                Remember Me
-              </b-form-checkbox>
-            </b-form-group>
+         
 
             <!-- submit button -->
             <b-button
@@ -157,7 +148,7 @@
 <script>
 import { ValidationProvider, ValidationObserver } from 'vee-validate'
 import {
-  BButton, BForm, BFormInput, BFormGroup, BCard, BLink, BCardTitle, BCardText, BInputGroup, BInputGroupAppend,
+  BButton, BForm, BFormInput, BFormGroup, BCard, BLink, BCardTitle, BCardText, BInputGroup, BInputGroupAppend, BFormCheckbox,
 } from 'bootstrap-vue'
 import VuexyLogo from '@core/layouts/components/Logo.vue'
 import { required, email } from '@validations'
