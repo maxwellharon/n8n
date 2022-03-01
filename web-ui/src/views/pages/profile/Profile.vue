@@ -10,7 +10,7 @@
           alt="random image"
         />
          <b-button class="mx"
-      variant="secondary" size="lg"
+      variant="secondary" size="sm"
     >
       Choose ...
     </b-button>
@@ -18,7 +18,8 @@
         <!-- <button class="mx">Choose</button> -->
         <b-button class="mxl"
       v-ripple.400="'rgba(113, 102, 240, 0.15)'"
-      variant="outline-primary" size="lg"
+          size="sm"
+          variant="outline-primary"
     >
       Update
     </b-button>
@@ -56,6 +57,8 @@ export default {
   components: {
     BButton,
     ProfileAbout,
+    BRow,
+    BCol,
   },
   directives: {
     Ripple,
@@ -64,10 +67,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<style lang="scss" scoped >
 @import '@core/scss/vue/pages/page-profile.scss';
 
-// @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
 
 #main {
   margin-left: -200px !important;
@@ -78,17 +80,17 @@ export default {
   margin: 0;
 }
 
-html {
-  font-family: "Roboto", sans-serif !important;
-  font-size: 12px !important;
-  /* overflow: hidden; */
-}
+// html {
+//   font-family: "Roboto", sans-serif !important;
+//   font-size: 12px !important;
+//   overflow: hidden;
+// }
 
-body {
-  background: #1488cc;
-  background: -webkit-linear-gradient(to right, #2b32b2, #1488cc);
-  background: linear-gradient(to right, #2b32b2, #1488cc);
-}
+// body {
+//   background: #1488cc;
+//   background: -webkit-linear-gradient(to right, #2b32b2, #1488cc);
+//   background: linear-gradient(to right, #2b32b2, #1488cc);
+// }
 
 .wrapper {
   height: 100%;
@@ -104,7 +106,7 @@ body {
   border-radius: 10px;
   top: 50%;
   left: 50%;
-  transform: translate(-25%, -90%);
+  transform: translate(-25%, -99%);
   box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
 }
 
@@ -137,8 +139,6 @@ img {
   height: 33px;
   width: 100px;
   margin: -148px 0 0.5rem 0;
-  color: #999 !important; 
-  font-size: 1.25rem !important; 
 }
 .mxl {
   transform: translate(55%, -42%) !important;
@@ -148,16 +148,16 @@ img {
 }
 
 .rules {
-  font-size: 0.7rem !important;
+  font-size: 0.9rem !important;
   transform: translate(10%, -96%) !important;
 }
 
-h1 {
-  margin: 0 0 1rem 0 !important;
-  // font-size: 2.5rem !important;
-  letter-spacing: 0.5px !important;
-  color: #333 !important;
-}
+// h1 {
+//   margin: 0 0 1rem 0 !important;
+//   font-size: 2.5rem !important;
+//   letter-spacing: 0.5px !important;
+//   color: #333 !important;
+// }
 
 /* p {
   margin: 0 0 4.5rem 0;
@@ -194,14 +194,14 @@ hr.solid {
     transform: translate(-57%, 57%) !important;
     /* margin: -148px 0 0.5rem 0; */
     color: #999 !important;
-    font-size: 1.25rem !important;
+    // font-size: 1.25rem !important;
   }
 
   .mxl {
     transform: translate(220%, -377%) !important;
     /* margin: -148px 0 0.5rem 0; */
-    color: #999 !important;
-    font-size: 1.25rem !important;
+    // color: #999 !important;
+    // font-size: 1.25rem !important;
   }
 
   .rules {
