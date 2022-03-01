@@ -16,7 +16,7 @@
           Welcome to Smartcollect! 👋
         </b-card-title>
         <b-card-text class="mb-2">
-          Please sign-in to your account and start the adventure
+          Sign In to your Account
         </b-card-text>
 
         <!-- form -->

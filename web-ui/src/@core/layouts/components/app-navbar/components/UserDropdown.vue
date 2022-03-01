@@ -39,21 +39,21 @@
       <span>Profile</span>
     </b-dropdown-item>
     <b-dropdown-item
-      :to="{ name: 'apps-email' }"
+      :to="{ name: null }"
       link-class="d-flex align-items-center"
     >
       <feather-icon
         size="16"
-        icon="MailIcon"
+        icon="ListIcon"
         class="mr-50"
       />
-      <span>Inbox</span>
+      <span>TaskList</span>
     </b-dropdown-item>
     <b-dropdown-item
-      :to="{ name: 'apps-todo' }"
+      :to="{ name: null }"
       link-class="d-flex align-items-center"
     >
-      <feather-icon
+      <!-- <feather-icon
         size="16"
         icon="CheckSquareIcon"
         class="mr-50"
@@ -63,18 +63,18 @@
     <b-dropdown-item
       :to="{ name: 'apps-chat' }"
       link-class="d-flex align-items-center"
-    >
-      <feather-icon
+    > -->
+      <!-- <feather-icon
         size="16"
         icon="MessageSquareIcon"
         class="mr-50"
       />
-      <span>Chat</span>
+      <span>Chat</span> -->
     </b-dropdown-item>
 
     <b-dropdown-divider />
 
-    <b-dropdown-item
+    <!-- <b-dropdown-item
       :to="{ name: 'pages-account-setting' }"
       link-class="d-flex align-items-center"
     >
@@ -84,8 +84,8 @@
         class="mr-50"
       />
       <span>Settings</span>
-    </b-dropdown-item>
-    <b-dropdown-item
+    </b-dropdown-item> -->
+    <!-- <b-dropdown-item
       :to="{ name: 'pages-pricing' }"
       link-class="d-flex align-items-center"
     >
@@ -95,8 +95,8 @@
         class="mr-50"
       />
       <span>Pricing</span>
-    </b-dropdown-item>
-    <b-dropdown-item
+    </b-dropdown-item> -->
+    <!-- <b-dropdown-item
       :to="{ name: 'pages-faq' }"
       link-class="d-flex align-items-center"
     >
@@ -106,7 +106,7 @@
         class="mr-50"
       />
       <span>FAQ</span>
-    </b-dropdown-item>
+    </b-dropdown-item> -->
     <b-dropdown-item
       link-class="d-flex align-items-center"
       @click="logout"
