@@ -187,9 +187,26 @@ export default [{
     },
     {
         path: '/pages/profile/profile-signature',
-        name: 'pages-profile',
+        name: 'pages-signature',
         component: () =>
             import ('@/views/pages/profile/ProfileSignature.vue'),
+        meta: {
+            pageTitle: 'Profile',
+            breadcrumb: [{
+                    text: 'Pages',
+                },
+                {
+                    text: 'Profile',
+                    active: true,
+                },
+            ],
+        },
+    },
+    {
+        path: '/pages/profile/profile-settings',
+        name: 'pages-profile',
+        component: () =>
+            import ('@/views/pages/profile/ProfileSettings.vue'),
         meta: {
             pageTitle: 'Profile',
             breadcrumb: [{
