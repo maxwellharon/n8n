@@ -3,48 +3,57 @@
     <b-col md="6">
       <div class="demo-inline-spacing">
         <b-button
+        v-model="selectedRadio"
           v-ripple.400="'rgba(255, 255, 255, 0.15)'"
           block
-          variant="primary"
+          variant="outline-primary"
           :to="{ path: '/pages/profile' }"
         >
 
           General
         </b-button>
         <b-button
-          v-ripple.400="'rgba(113, 102, 240, 0.15)'"
+        inactive
+        v-model="selectedRadio"
+          v-ripple.400="'rgba(255, 255, 255, 0.15)'"
           block
           variant="outline-primary"
           :to="{ path: '/pages/profile/profile-signature' }"
         >
           Signature
         </b-button>
-      </div>
-    </b-col>
-
-    <!-- <b-col md="6">
-      <div class="demo-inline-spacing">
         <b-button
-          v-ripple.400="'rgba(113, 102, 240, 0.15)'"
+        v-model="selectedRadio"
+          v-ripple.400="'rgba(255, 255, 255, 0.15)'"
           block
           variant="outline-primary"
+          :to="{ path: '/pages/profile/profile-settings' }"
         >
-          Signature
+          Settings
         </b-button>
       </div>
-    </b-col> -->
+    </b-col>
   </b-row>
 </template>
 
 <script>
-import { BButton, BCol, BRow } from 'bootstrap-vue'
+import { BFormRadioGroup, BFormCheckboxGroup, BFormGroup, BButton, BCol, BRow } from 'bootstrap-vue'
 import Ripple from 'vue-ripple-directive'
 
 
 
 
 export default {
+  data() {
+    return {
+      selectedCheckbox: ['active'],
+      selectedRadio: 'active'
+    };
+  },
   components: {
+    BFormRadioGroup,
+    BFormCheckboxGroup,
+    BFormGroup,
     BButton,
     BCol,
     BRow,
