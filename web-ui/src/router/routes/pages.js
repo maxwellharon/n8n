@@ -20,6 +20,16 @@ export default [{
             redirectIfLoggedIn: true,
         },
     },
+    {
+        path: '/google-auth',
+        name: 'google-auth',
+        component: () =>
+            import ('@/views/pages/authentication/GoogleAuth.vue'),
+        meta: {
+            layout: 'full',
+
+        }
+    },
     // {
     //   path: '/pages/authentication/login-v1',
     //   name: 'auth-login-v1',
