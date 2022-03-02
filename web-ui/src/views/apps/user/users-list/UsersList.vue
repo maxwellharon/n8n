@@ -62,8 +62,25 @@
                 variant="primary"
                 @click="isAddNewUserSidebarActive = true"
               >
-                <span class="text-nowrap">Add User</span>
+                <span class="text-nowrap"><feather-icon
+                icon="PlusCircleIcon"
+                size="15"
+              /> Add User</span>
               </b-button>
+              <b-button-group>
+                
+               <b-dropdown
+                v-ripple.400="'rgba(113, 102, 240, 0.15)'"
+                right
+                variant="info"
+                text="Export"
+              >
+         
+                  <b-dropdown-item>CSV</b-dropdown-item>
+                  <b-dropdown-item>XLSX</b-dropdown-item>
+                  <b-dropdown-divider />
+                </b-dropdown>
+              </b-button-group>
             </div>
           </b-col>
         </b-row>
@@ -82,6 +99,39 @@
         empty-text="No matching records found"
         :sort-desc.sync="isSortDirDesc"
       >
+
+        <!-- Column: Actions -->
+        <template #cell(actions)="data">
+          <b-dropdown
+            variant="link"
+            no-caret
+            :right="$store.state.appConfig.isRTL"
+          >
+
+            <template #button-content>
+              <feather-icon
+                icon="MoreVerticalIcon"
+                size="16"
+                class="align-middle text-body"
+              />
+            </template>
+            <b-dropdown-item :to="{ name: 'apps-users-view', params: { id: data.item.id } }">
+              <feather-icon icon="FileTextIcon" />
+              <span class="align-middle ml-50">Details</span>
+            </b-dropdown-item>
+
+            <b-dropdown-item :to="{ name: 'apps-users-edit', params: { id: data.item.id } }">
+              <feather-icon icon="EditIcon" />
+              <span class="align-middle ml-50">Edit</span>
+            </b-dropdown-item>
+
+            <b-dropdown-item>
+              <feather-icon icon="TrashIcon" />
+              <span class="align-middle ml-50">Delete</span>
+            </b-dropdown-item>
+          </b-dropdown>
+        </template>
+
 
         <!-- Column: User -->
         <template #cell(user)="data">
@@ -129,37 +179,6 @@
           </b-badge>
         </template>
 
-        <!-- Column: Actions -->
-        <template #cell(actions)="data">
-          <b-dropdown
-            variant="link"
-            no-caret
-            :right="$store.state.appConfig.isRTL"
-          >
-
-            <template #button-content>
-              <feather-icon
-                icon="MoreVerticalIcon"
-                size="16"
-                class="align-middle text-body"
-              />
-            </template>
-            <b-dropdown-item :to="{ name: 'apps-users-view', params: { id: data.item.id } }">
-              <feather-icon icon="FileTextIcon" />
-              <span class="align-middle ml-50">Details</span>
-            </b-dropdown-item>
-
-            <b-dropdown-item :to="{ name: 'apps-users-edit', params: { id: data.item.id } }">
-              <feather-icon icon="EditIcon" />
-              <span class="align-middle ml-50">Edit</span>
-            </b-dropdown-item>
-
-            <b-dropdown-item>
-              <feather-icon icon="TrashIcon" />
-              <span class="align-middle ml-50">Delete</span>
-            </b-dropdown-item>
-          </b-dropdown>
-        </template>
 
       </b-table>
       <div class="mx-2 mb-2">
@@ -224,6 +243,8 @@ import UsersListFilters from './UsersListFilters.vue'
 import useUsersList from './useUsersList'
 import userStoreModule from '../userStoreModule'
 import UserListAddNew from './UserListAddNew.vue'
+import FeatherIcon from '@core/components/feather-icon/FeatherIcon.vue'
+
 
 export default {
   components: {
@@ -243,6 +264,7 @@ export default {
     BDropdown,
     BDropdownItem,
     BPagination,
+    FeatherIcon,
 
     vSelect,
   },
@@ -260,11 +282,13 @@ export default {
     const isAddNewUserSidebarActive = ref(false)
 
     const roleOptions = [
-      { label: 'Admin', value: 'admin' },
-      { label: 'Author', value: 'author' },
-      { label: 'Editor', value: 'editor' },
-      { label: 'Maintainer', value: 'maintainer' },
-      { label: 'Subscriber', value: 'subscriber' },
+      { label: 'Administrator', value: 'admin' },
+      { label: 'Manager', value: 'author' },
+      { label: 'Branch Manager', value: 'editor' },
+      { label: 'Team Leader', value: 'maintainer' },
+      { label: 'Account Manager', value: 'subscriber' },
+       { label: 'Data Entry', value: 'subscriber' },
+        { label: 'Agency Representative', value: 'subscriber' },
     ]
 
     const planOptions = [

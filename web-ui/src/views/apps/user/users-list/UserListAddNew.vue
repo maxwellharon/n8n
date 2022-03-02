@@ -14,8 +14,8 @@
     <template #default="{ hide }">
       <!-- Header -->
       <div class="d-flex justify-content-between align-items-center content-sidebar-header px-2 py-1">
-        <h5 class="mb-0">
-          Add New User
+        <h5 class="mb-0" style="color: #7367f0;">
+          ADD USER
         </h5>
 
         <feather-icon
@@ -42,11 +42,11 @@
           <!-- Full Name -->
           <validation-provider
             #default="validationContext"
-            name="Full Name"
+            name="First Name"
             rules="required"
           >
             <b-form-group
-              label="Full Name"
+              label="FIRST NAME"
               label-for="full-name"
             >
               <b-form-input
@@ -55,7 +55,7 @@
                 autofocus
                 :state="getValidationState(validationContext)"
                 trim
-                placeholder="John Doe"
+                placeholder="First Name ..."
               />
 
               <b-form-invalid-feedback>
@@ -64,21 +64,23 @@
             </b-form-group>
           </validation-provider>
 
-          <!-- Username -->
+          <!-- Last Name -->
           <validation-provider
             #default="validationContext"
-            name="Username"
-            rules="required|alpha-num"
+            name="Last Name"
+            rules="required"
           >
             <b-form-group
-              label="Username"
-              label-for="username"
+              label="LAST NAME"
+              label-for="full-name"
             >
               <b-form-input
-                id="username"
-                v-model="userData.username"
+                id="full-name"
+                v-model="userData.fullName"
+                autofocus
                 :state="getValidationState(validationContext)"
                 trim
+                placeholder="Last Name ..."
               />
 
               <b-form-invalid-feedback>
@@ -86,6 +88,7 @@
               </b-form-invalid-feedback>
             </b-form-group>
           </validation-provider>
+       
 
           <!-- Email -->
           <validation-provider
@@ -102,6 +105,7 @@
                 v-model="userData.email"
                 :state="getValidationState(validationContext)"
                 trim
+                placeholder="Email ..."
               />
 
               <b-form-invalid-feedback>
@@ -113,11 +117,10 @@
           <!-- Company -->
           <validation-provider
             #default="validationContext"
-            name="Contact"
-            rules="required"
+            name="PHONE"
           >
             <b-form-group
-              label="Contact"
+              label="PHONE"
               label-for="contact"
             >
               <b-form-input
@@ -125,6 +128,7 @@
                 v-model="userData.contact"
                 :state="getValidationState(validationContext)"
                 trim
+                placeholder="Phone ..."
               />
 
               <b-form-invalid-feedback>
@@ -133,62 +137,19 @@
             </b-form-group>
           </validation-provider>
 
-          <!-- Company -->
-          <validation-provider
-            #default="validationContext"
-            name="Company"
-            rules="required"
-          >
-            <b-form-group
-              label="Company"
-              label-for="company"
-            >
-              <b-form-input
-                id="company"
-                v-model="userData.company"
-                :state="getValidationState(validationContext)"
-                trim
-              />
+          
 
-              <b-form-invalid-feedback>
-                {{ validationContext.errors[0] }}
-              </b-form-invalid-feedback>
-            </b-form-group>
-          </validation-provider>
-
-          <!-- Country -->
-          <validation-provider
-            #default="validationContext"
-            name="Country"
-            rules="required"
-          >
-            <b-form-group
-              label="Country"
-              label-for="country"
-              :state="getValidationState(validationContext)"
-            >
-              <v-select
-                v-model="userData.country"
-                :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
-                :options="countries"
-                :clearable="false"
-                input-id="country"
-              />
-              <b-form-invalid-feedback :state="getValidationState(validationContext)">
-                {{ validationContext.errors[0] }}
-              </b-form-invalid-feedback>
-            </b-form-group>
-          </validation-provider>
+       
 
           <!-- User Role -->
           <validation-provider
             #default="validationContext"
-            name="User Role"
+            name="ROLE"
             rules="required"
           >
             <b-form-group
-              label="User Role"
-              label-for="user-role"
+              label="ROLE"
+              label-for="ROLE"
               :state="getValidationState(validationContext)"
             >
               <v-select
@@ -198,6 +159,7 @@
                 :reduce="val => val.value"
                 :clearable="false"
                 input-id="user-role"
+                placeholder="Select Role"
               />
               <b-form-invalid-feedback :state="getValidationState(validationContext)">
                 {{ validationContext.errors[0] }}
@@ -208,12 +170,12 @@
           <!-- Plan -->
           <validation-provider
             #default="validationContext"
-            name="Plan"
+            name="TEAM"
             rules="required"
           >
             <b-form-group
-              label="Plan"
-              label-for="plan"
+              label="TEAM"
+              label-for="TEAM"
               :state="getValidationState(validationContext)"
             >
               <v-select
@@ -223,6 +185,33 @@
                 :reduce="val => val.value"
                 :clearable="false"
                 input-id="plan"
+                placeholder="Select Team"
+              />
+              <b-form-invalid-feedback :state="getValidationState(validationContext)">
+                {{ validationContext.errors[0] }}
+              </b-form-invalid-feedback>
+            </b-form-group>
+          </validation-provider>
+
+          <!-- Plan -->
+          <validation-provider
+            #default="validationContext"
+            name="Branch"
+            rules="required"
+          >
+            <b-form-group
+              label="BRANCH"
+              label-for="Branch"
+              :state="getValidationState(validationContext)"
+            >
+              <v-select
+                v-model="userData.currentPlan"
+                :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
+                :options="planOptions"
+                :reduce="val => val.value"
+                :clearable="false"
+                input-id="branch"
+                placeholder="Select Branch"
               />
               <b-form-invalid-feedback :state="getValidationState(validationContext)">
                 {{ validationContext.errors[0] }}
@@ -234,18 +223,26 @@
           <div class="d-flex mt-2">
             <b-button
               v-ripple.400="'rgba(255, 255, 255, 0.15)'"
-              variant="primary"
+              variant="success"
               class="mr-2"
               type="submit"
             >
-              Add
+            <feather-icon
+                icon="CheckCircleIcon"
+                size="15"
+              />
+              Save
             </b-button>
             <b-button
               v-ripple.400="'rgba(186, 191, 199, 0.15)'"
-              type="button"
+              type="primary"
               variant="outline-secondary"
               @click="hide"
             >
+            <feather-icon
+                icon="XCircleIcon"
+                size="15"
+              />
               Cancel
             </b-button>
           </div>

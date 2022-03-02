@@ -28,7 +28,7 @@ export default [{
         icon: 'UsersIcon',
         children: [{
                 title: 'List',
-                route: null,
+                route: 'apps-users-list',
             },
             {
                 title: 'Teams',
