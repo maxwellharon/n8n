@@ -82,22 +82,7 @@
           </b-form-group>
         </b-col>
 
-        <!-- Field: Email -->
-        <b-col
-          cols="12"
-          md="4"
-        >
-          <b-form-group
-            label="Email"
-            label-for="email"
-          >
-            <b-form-input
-              id="email"
-              v-model="userData.email"
-              type="email"
-            />
-          </b-form-group>
-        </b-col>
+       
 
         <!-- Field: Status -->
         <b-col
@@ -115,6 +100,23 @@
               :reduce="val => val.value"
               :clearable="false"
               input-id="user-status"
+            />
+          </b-form-group>
+        </b-col>
+
+         <!-- Field: Email -->
+        <b-col
+          cols="12"
+          md="4"
+        >
+          <b-form-group
+            label="Email"
+            label-for="email"
+          >
+            <b-form-input
+              id="email"
+              v-model="userData.email"
+              type="email"
             />
           </b-form-group>
         </b-col>

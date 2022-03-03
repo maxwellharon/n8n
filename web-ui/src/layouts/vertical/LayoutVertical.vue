@@ -5,7 +5,6 @@
 
     <app-customizer
       v-if="showCustomizer"
-      slot="customizer"
     />
 
   </layout-vertical>

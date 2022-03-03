@@ -1,5 +1,7 @@
 <template>
-
+<div>
+ <div>
+   <img src="@/assets/images/pages/auth-v1-top-bg.png" alt="">
  <b-col md="7" class="col">
         <b-card class="text-center">
           <b-tabs
@@ -50,6 +52,11 @@
           </b-tabs>
         </b-card>
       </b-col>
+   </div>
+    <div class="imgg">
+      <!-- <img src="@/assets/images/pages/auth-v1-bottom-bg.png" alt=""> -->
+      </div>
+      </div>
 </template>
 
 <script>
@@ -57,6 +64,7 @@ import {BFormInput, BRow, BCol, BFormGroup} from 'bootstrap-vue'
 import {
   BCard, BTab, BTabs, BCardText, BCardTitle, BButton,
 } from 'bootstrap-vue'
+import VuexyLogo from '@core/layouts/components/Logo.vue'
 import Ripple from 'vue-ripple-directive'
 import { getHomeRouteForLoggedInUser } from '@/auth/utils'
 
@@ -67,6 +75,7 @@ export default {
     BRow,
     BCol,
     BCard,
+    VuexyLogo,
     BTab,
     BTabs,
     BCardText,
@@ -83,7 +92,13 @@ export default {
 <style lang="scss" scoped>
 @import '@core/scss/vue/pages/page-auth.scss';
 .col{
-    transform: translate(33%, 55%) !important;
+    transform: translate(39%, -1%) !important;
+}
+img{
+  transform: translate(83%, 79%) !important;
+}
+.imgg img {
+  transform: translate(227%, -66%) !important;
 }
 @media only screen and (max-width: 600px) {
     .col{

@@ -6,10 +6,10 @@
       <b-card class="mb-0">
         <b-link class="brand-logo">
           <!-- <vuexy-logo /> -->
-            <img src="@/assets/images/logo/favicon-32x32.png" alt="">
-          <h2 class="brand-text text-primary ml-1">
+            <img src="@/assets/images/logo/logo0.png" alt="">
+          <!-- <h2 class="brand-text text-primary ml-1">
             Smartcollect
-          </h2>
+          </h2> -->
         </b-link>
 
         <b-card-title class="mb-1">
@@ -251,4 +251,8 @@ export default {
 
 <style lang="scss">
 @import '@core/scss/vue/pages/page-auth.scss';
+img {
+  width: 222px;
+  height: 50px;
+}
 </style>
