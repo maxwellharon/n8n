@@ -25,6 +25,8 @@
     </b-button>
         <!-- <button class="mxl">Update</button> -->
         <p class="rules">Allowed JPG or PNG. Max size of 800kB</p>
+        
+
         <dl>
           <dt>
             <div class="p-2" id="main"><b>NAMES:</b></div>
@@ -52,13 +54,18 @@ import { BButton} from 'bootstrap-vue'
 import { BRow, BCol } from 'bootstrap-vue'
 import Ripple from 'vue-ripple-directive'
 import ProfileAbout from './ProfileAbout.vue'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
 
 export default {
   components: {
+    FontAwesomeIcon,
     BButton,
     ProfileAbout,
     BRow,
     BCol,
+    fab,
   },
   directives: {
     Ripple,
@@ -69,6 +76,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped >
 @import '@core/scss/vue/pages/page-profile.scss';
+
 
 
 #main {

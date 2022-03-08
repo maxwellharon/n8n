@@ -63,12 +63,10 @@
                 variant="primary"
                 @click="isAddNewUserSidebarActive = true"
               >
-                <span class="text-nowrap"><feather-icon
-                icon="PlusCircleIcon"
-                size="15"
-              /> Add User</span>
+                <span class="text-nowrap"><font-awesome-icon icon="fa-solid fa-circle-plus" /> Add User</span>
               </b-button>
               <b-button-group>
+                  <!-- <font-awesome-icon icon="fa-solid fa-download" /> -->
                 
                <b-dropdown
                class="tes"

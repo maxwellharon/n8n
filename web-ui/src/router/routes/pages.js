@@ -179,6 +179,23 @@ export default [{
         },
     },
     {
+        path: '/pages/settings/workflow',
+        name: 'work-flow',
+        component: () =>
+            import ('@/views/pages/settings/WorkFlow.vue'),
+        meta: {
+            pageTitle: 'Work-Flow',
+            breadcrumb: [{
+                    text: 'Work-Flow',
+                },
+                {
+                    text: 'Work-Flow',
+                    active: true,
+                },
+            ],
+        },
+    },
+    {
         path: '/pages/profile',
         name: 'pages-profile',
         component: () =>

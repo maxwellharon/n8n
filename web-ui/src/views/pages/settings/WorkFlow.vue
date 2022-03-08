@@ -1,4 +1,5 @@
 <template>
+<div>
   <b-card no-body>
     <b-card-header class="pb-50">
       <h5>
@@ -22,76 +23,11 @@
             @input="(val) => $emit('update:roleFilter', val)"
             placeholder="Status ..."
           />
-           <label class="text-muted">Status</label>
         </b-col>
-        <b-col
-          cols="12"
-          md="3"
-          class="mb-md-0 mb-2"
-        >
-          
-          <v-select
-            :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
-            :value="planFilter"
-            :options="planOptions"
-            class="w-100"
-            :reduce="val => val.value"
-            @input="(val) => $emit('update:planFilter', val)"
-            placeholder="Enabled ..."
-          />
-          <label class="text-muted">Enabled</label>
-        </b-col>
-        <b-col
-          cols="12"
-          md="3"
-          class="mb-md-0 mb-2"
-        >
-          
-          <v-select
-            :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
-            :value="statusFilter"
-            :options="statusOptions"
-            class="w-100"
-            :reduce="val => val.value"
-            @input="(val) => $emit('update:statusFilter', val)"
-            placeholder="Role ..."
-          />
-          <label class="text-muted">Role</label>
-        </b-col>
-         <b-col
-          cols="12"
-          md="3"
-          class="mb-md-0 mb-2"
-        >
-          
-          <v-select
-            :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
-            :value="statusFilter"
-            :options="statusOptions"
-            class="w-100"
-            :reduce="val => val.value"
-            @input="(val) => $emit('update:statusFilter', val)"
-            placeholder="Team ..."
-          />
-          <label class="text-muted">Team</label>
-        </b-col>
-        <b-col
-          cols="12"
-          md="3"
-          class="mb-md-0 mb-2"
-        >
-          
-          <v-select
-            :dir="$store.state.appConfig.isRTL ? 'rtl' : 'ltr'"
-            :value="statusFilter"
-            :options="statusOptions"
-            class="w-100"
-            :reduce="val => val.value"
-            @input="(val) => $emit('update:statusFilter', val)"
-            placeholder="Branch ..."
-          />
-          <label class="text-muted">Branch</label>
-        </b-col>
+     
+      
+       
+       
          <b-col
           cols="12"
           md="3"
@@ -115,6 +51,8 @@
       </b-row>
     </b-card-body>
   </b-card>
+  <work-flow-list/>
+  </div>
 </template>
 
 <script>
@@ -124,6 +62,7 @@ import {
 import vSelect from 'vue-select'
 import Ripple from 'vue-ripple-directive'
 import FeatherIcon from '@core/components/feather-icon/FeatherIcon.vue'
+import WorkFlowList from './WorkFlowList.vue'
 
 
 export default {
@@ -136,6 +75,7 @@ export default {
     vSelect,
     BButton,
     FeatherIcon,
+    WorkFlowList,
   },
   directives: {
     Ripple,

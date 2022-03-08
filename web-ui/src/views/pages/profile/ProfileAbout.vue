@@ -6,10 +6,10 @@
         v-model="selectedRadio"
           v-ripple.400="'rgba(255, 255, 255, 0.15)'"
           block
-          variant="outline-primary"
+          variant="primary"
           :to="{ path: '/pages/profile' }"
         >
-
+          <font-awesome-icon icon="fa-solid fa-user" />
           General
         </b-button>
         <b-button
@@ -20,6 +20,7 @@
           variant="outline-primary"
           :to="{ path: '/pages/profile/profile-signature' }"
         >
+        <font-awesome-icon icon="fa-solid fa-signature" />
           Signature
         </b-button>
         <b-button
@@ -29,6 +30,7 @@
           variant="outline-primary"
           :to="{ path: '/pages/profile/profile-settings' }"
         >
+        <font-awesome-icon icon="fa-solid fa-gear" />
           Settings
         </b-button>
       </div>
@@ -39,6 +41,7 @@
 <script>
 import { BFormRadioGroup, BFormCheckboxGroup, BFormGroup, BButton, BCol, BRow } from 'bootstrap-vue'
 import Ripple from 'vue-ripple-directive'
+
 
 
 
