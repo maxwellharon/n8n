@@ -10,14 +10,14 @@
     />
 
     <!-- Filters -->
-    <!-- <users-list-filters
+    <users-list-filters
       :role-filter.sync="roleFilter"
       :plan-filter.sync="planFilter"
       :status-filter.sync="statusFilter"
       :role-options="roleOptions"
       :plan-options="planOptions"
       :status-options="statusOptions"
-    /> -->
+    />
     <!-- <filters/> -->
       
     <!-- Table Container Card -->
@@ -63,7 +63,7 @@
                 variant="primary"
                 @click="isAddNewUserSidebarActive = true"
               >
-                <span class="text-nowrap"><font-awesome-icon icon="fa-solid fa-circle-plus" /> Add Workflow</span>
+                <span class="text-nowrap"><font-awesome-icon icon="fa-solid fa-circle-plus" /> Add User</span>
               </b-button>
               <b-button-group>
                   <!-- <font-awesome-icon icon="fa-solid fa-download" /> -->
@@ -137,7 +137,21 @@
             </b-button>
             </span>
               </div>
-            
+              <div  value="left"
+        plain>
+        <span class="ml-50 mr-1">
+                          <b-button
+              v-b-tooltip.hover.v-dark
+      title="Reset Password"            
+              @click="info"            
+              variant="outline-primary"
+              class="btn-icon rounded-circle"
+              size="sm"
+            >
+              <feather-icon icon="RefreshCwIcon" />
+            </b-button>
+            </span>
+              </div>
                 <div 
          value="left"
         plain>
@@ -151,6 +165,22 @@
               size="sm"
             >
               <feather-icon icon="Trash2Icon" />
+            </b-button>
+            </span>
+              </div>
+             <div 
+         value="left"
+        plain>
+        <span class="ml-50 mr-1">
+                          <b-button
+              v-b-tooltip.hover.v-dark
+      title="Login As"            
+              @click="danger"            
+              variant="outline-secondary"
+              class="btn-icon rounded-circle"
+              size="sm"
+            >
+              <feather-icon icon="LogInIcon" />
             </b-button>
             </span>
               </div>
@@ -190,7 +220,7 @@
 
 
         <!-- Column: User -->
-        <template #cell(name)="data">
+        <template #cell(user)="data">
           <b-media vertical-align="center">
             <!-- <template #aside>
               <b-avatar
@@ -212,33 +242,7 @@
         </template>
 
         <!-- Column: Role -->
-        <template #cell(description)="data">
-          <div class="text-nowrap">
-            <feather-icon
-              :icon="resolveUserRoleIcon(data.item.role)"
-              size="18"
-              class="mr-50"
-              :class="`text-${resolveUserRoleVariant(data.item.role)}`"
-            />
-            <span class="align-text-top text-capitalize">{{ data.item.role }}</span>
-          </div>
-        </template>
-
-         <!-- Column: Role -->
-        <template #cell(trigger)="data">
-          <div class="text-nowrap">
-            <feather-icon
-              :icon="resolveUserRoleIcon(data.item.role)"
-              size="18"
-              class="mr-50"
-              :class="`text-${resolveUserRoleVariant(data.item.role)}`"
-            />
-            <span class="align-text-top text-capitalize">{{ data.item.role }}</span>
-          </div>
-        </template>
-
-         <!-- Column: Role -->
-        <template #cell(last run)="data">
+        <template #cell(role)="data">
           <div class="text-nowrap">
             <feather-icon
               :icon="resolveUserRoleIcon(data.item.role)"
@@ -251,7 +255,7 @@
         </template>
 
         <!-- Column: Status -->
-        <template #cell(target module)="data">
+        <template #cell(status)="data">
           <b-badge
             pill
             :variant="`light-${resolveUserStatusVariant(data.item.status)}`"
@@ -326,7 +330,7 @@ import { ref, onUnmounted } from '@vue/composition-api'
 import { avatarText } from '@core/utils/filter'
 import UsersListFilters from './UsersListFilters.vue'
 import useUsersList from './useUsersList'
-import userStoreModule from './userStoreModule'
+import userStoreModule from '../userStoreModule'
 import UserListAddNew from './UserListAddNew.vue'
 import FeatherIcon from '@core/components/feather-icon/FeatherIcon.vue'
 import Ripple from 'vue-ripple-directive'

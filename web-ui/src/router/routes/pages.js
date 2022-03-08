@@ -196,6 +196,23 @@ export default [{
         },
     },
     {
+        path: '/pages/settings/workfloweditor',
+        name: 'work-flow-editor',
+        component: () =>
+            import ('@/views/pages/settings/WorkFlowEditor.vue'),
+        meta: {
+            pageTitle: 'Work-Flow-Editor',
+            breadcrumb: [{
+                    text: 'Work-Flow-Editor',
+                },
+                {
+                    text: 'Work-Flow-Editor',
+                    active: true,
+                },
+            ],
+        },
+    },
+    {
         path: '/pages/profile',
         name: 'pages-profile',
         component: () =>
