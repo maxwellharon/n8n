@@ -5,16 +5,8 @@
       <!-- Login v1 -->
       <b-card class="mb-0">
         <b-link class="brand-logo">
-          <!-- <vuexy-logo /> -->
             <img src="@/assets/images/logo/logo0.png" alt="">
-          <!-- <h2 class="brand-text text-primary ml-1">
-            Smartcollect
-          </h2> -->
         </b-link>
-
-        <b-card-title class="mb-1">
-          Welcome to Smartcollect! 👋
-        </b-card-title>
         <b-card-text class="mb-2">
           Sign In to your Account
         </b-card-text>
@@ -101,6 +93,7 @@
               block
               :disabled="invalid"
             >
+            <font-awesome-icon icon="fa-solid fa-right-to-bracket" />
               Sign in
             </b-button>
           </b-form>
@@ -232,7 +225,7 @@ export default {
                     position: 'top-right',
                     props: {
                       title: `Welcome ${userData.fullName || userData.username}`,
-                      icon: 'CoffeeIcon',
+                      icon: 'CheckCircleIcon',
                       variant: 'success',
                       text: `You have successfully logged in as ${userData.role}. Now you can start to explore!`,
                     },
@@ -249,10 +242,10 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '@core/scss/vue/pages/page-auth.scss';
 img {
-  width: 222px;
-  height: 50px;
+  width: 352px;
+  height: 80px;
 }
 </style>

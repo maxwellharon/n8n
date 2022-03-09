@@ -113,7 +113,7 @@
     >
       <feather-icon
         size="16"
-        icon="LogOutIcon"
+        icon="PowerIcon"
         class="mr-50"
       />
       <span>Logout</span>

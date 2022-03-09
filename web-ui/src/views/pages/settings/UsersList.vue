@@ -148,7 +148,7 @@
               class="btn-icon rounded-circle"
               size="sm"
             >
-              <feather-icon icon="RefreshCwIcon" />
+              <font-awesome-icon icon="fa-solid fa-lock-open" />
             </b-button>
             </span>
               </div>
@@ -164,7 +164,7 @@
               class="btn-icon rounded-circle"
               size="sm"
             >
-              <feather-icon icon="Trash2Icon" />
+              <font-awesome-icon icon="fa-solid fa-trash" />
             </b-button>
             </span>
               </div>
@@ -180,7 +180,7 @@
               class="btn-icon rounded-circle"
               size="sm"
             >
-              <feather-icon icon="LogInIcon" />
+              <font-awesome-icon icon="fa-solid fa-right-from-bracket" />
             </b-button>
             </span>
               </div>

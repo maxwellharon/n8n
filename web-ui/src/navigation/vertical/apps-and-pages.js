@@ -9,7 +9,7 @@ export default [{
     {
         title: 'New Files',
         route: null,
-        icon: 'FilePlusIcon',
+        icon: 'FileIcon',
     },
     {
         title: 'All Files',

@@ -37,6 +37,7 @@ import chartsAndMaps from './charts-and-maps'
 import uiElements from './ui-elements'
 import formAndTable from './forms-and-table'
 import settings from './settings'
+import actions from './actions'
 
 // Array of sections
-export default [...dashboard, ...appsAndPages, ...uiElements, ...formAndTable, ...chartsAndMaps, ...settings, ...others]
+export default [...dashboard, ...actions, ...appsAndPages, ...uiElements, ...formAndTable, ...chartsAndMaps, ...settings, ...others]
