@@ -9,7 +9,15 @@ export default [{
     {
         title: 'Workflows',
         icon: 'FastForwardIcon',
-        route: 'work-flow',
+        children: [{
+                title: 'List',
+                route: 'work-flow',
+            },
+            {
+                title: 'New',
+                route: null,
+            },
+        ]
 
     },
 ]
