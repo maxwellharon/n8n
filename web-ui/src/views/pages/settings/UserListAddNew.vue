@@ -235,4 +235,7 @@ export default {
     max-height: 200px !important;
   }
 }
+.b-sidebar.sidebar-lg {
+    width: 50%;
+}
 </style>

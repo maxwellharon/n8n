@@ -358,6 +358,10 @@ export default {
 #add-new-user-sidebar {
   .vs__dropdown-menu {
     max-height: 200px !important;
+    // max-width: 200px !important;
   }
+}
+.b-sidebar.sidebar-lg {
+    width: 50%;
 }
 </style>
