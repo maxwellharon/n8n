@@ -158,7 +158,7 @@
         <span class="ml mr-1" id="cc">
                           <b-button
                           v-b-tooltip.hover.v-dark
-      title="Delete"
+                           title="Delete"
                           @click="error"
               variant="outline-danger"
               class="btn-icon rounded-circle"

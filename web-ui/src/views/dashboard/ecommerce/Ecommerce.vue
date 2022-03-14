@@ -1,5 +1,16 @@
 <template>
+<div>
+     <draggable
+          tag="ul"
+          group="people"
+          class="list-group list-group-flush cursor-move"
+        >
+<ecommerce-statistics/>
 <ecommerce-medal :data="data.congratulations" />
+
+</draggable>
+
+</div>
 </template>
 
 <script>
@@ -17,6 +28,10 @@ import EcommerceMeetup from './EcommerceMeetup.vue'
 import EcommerceBrowserStates from './EcommerceBrowserStates.vue'
 import EcommerceGoalOverview from './EcommerceGoalOverview.vue'
 import EcommerceTransactions from './EcommerceTransactions.vue'
+import draggable from 'vuedraggable'
+import Prism from 'vue-prism-component'
+import 'prismjs'
+import 'prismjs/themes/prism-tomorrow.css'
 
 export default {
   components: {
@@ -34,6 +49,8 @@ export default {
     EcommerceBrowserStates,
     EcommerceGoalOverview,
     EcommerceTransactions,
+    Prism,
+    draggable,
   },
   data() {
     return {

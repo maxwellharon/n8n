@@ -107,7 +107,7 @@
         value="left"
         plain
         >
-        <span class="ml-50 mr-1">
+        <span class="ml-50 mr-1" id="bb">
                           <b-button
                v-b-tooltip.hover.v-dark
               title="Edit"           
@@ -117,14 +117,14 @@
               size="sm"
             >
 
-              <feather-icon icon="EditIcon" />
+              <font-awesome-icon icon="fa-solid fa-pen-to-square"  />
             </b-button>
             </span>
               </div>
               <div 
          value="left"
         plain>
-        <span class="ml-50 mr-1">
+        <span class="mr mr-1" id="bb">
                           <b-button
               v-b-tooltip.hover.v-dark
               title="Deactivate"            
@@ -133,7 +133,7 @@
               class="btn-icon rounded-circle"
               size="sm"
             >
-              <feather-icon icon="XCircleIcon" />
+              <font-awesome-icon icon="fa-solid fa-circle-xmark" />
             </b-button>
             </span>
               </div>
@@ -141,7 +141,7 @@
                 <div 
          value="left"
         plain>
-        <span class="ml-50 mr-1">
+        <span class="ml mr-1" id="cc">
                           <b-button
                           v-b-tooltip.hover.v-dark
       title="Delete"
@@ -150,7 +150,7 @@
               class="btn-icon rounded-circle"
               size="sm"
             >
-              <feather-icon icon="Trash2Icon" />
+              <font-awesome-icon icon="fa-solid fa-trash" />
             </b-button>
             </span>
               </div>
@@ -575,6 +575,22 @@ export default {
 
 <style lang="scss" scoped>
 @import '@core/scss/vue/libs/vue-select.scss';
+
+.tes {
+  padding-left: 40px;
+}
+
+.per-page-selector {
+  width: 90px;
+}
+
+#bb{
+  margin: 2px !important;
+}
+
+#cc{
+  margin: 2px !important;
+}
 
 .tes {
   padding-left: 40px;

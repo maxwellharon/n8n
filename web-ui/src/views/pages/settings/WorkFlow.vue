@@ -7,7 +7,6 @@
       </h5>
     </b-card-header>
     <b-card-actions
-          title="Remove Card"
           action-collapse
         >
      
