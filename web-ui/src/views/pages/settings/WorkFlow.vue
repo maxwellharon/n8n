@@ -6,7 +6,11 @@
         FILTERS
       </h5>
     </b-card-header>
-    <b-card-body>
+    <b-card-actions
+          title="Remove Card"
+          action-collapse
+        >
+     
       <b-row>
         <b-col
           cols="12"
@@ -49,13 +53,15 @@
     </b-button>
         </b-col>
       </b-row>
-    </b-card-body>
+    </b-card-actions> 
   </b-card>
   <work-flow-list/>
   </div>
 </template>
 
 <script>
+import BCardActions from '@core/components/b-card-actions/BCardActions.vue'
+
 import {
   BCard, BCardHeader, BCardBody, BRow, BCol, BButton
 } from 'bootstrap-vue'
@@ -67,6 +73,7 @@ import WorkFlowList from './WorkFlowList.vue'
 
 export default {
   components: {
+    BCardActions,
     BRow,
     BCol,
     BCard,

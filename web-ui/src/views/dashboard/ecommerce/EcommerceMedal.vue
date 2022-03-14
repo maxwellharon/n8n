@@ -1,4 +1,5 @@
 <template>
+<div>
   <b-card
     v-if="data"
     class="card-congratulation-medal"
@@ -22,6 +23,12 @@
       alt="Medal Pic"
     />
   </b-card>
+  <b-card><b-embed class="frame" :class="class_css"
+            type="iframe"
+            frameborder="0"
+            scrolling="no"
+        ></b-embed> </b-card>
+        </div>
 </template>
 
 <script>
@@ -32,6 +39,11 @@ import Ripple from 'vue-ripple-directive'
 import { kFormatter } from '@core/utils/filter'
 
 export default {
+  data() {
+        return {
+            analysis
+        }
+    },
   components: {
     BCard,
     BCardText,
@@ -51,5 +63,37 @@ export default {
   methods: {
     kFormatter,
   },
+  computed:{
+        grf(){ return this.info.src },
+        class_css(){
+            if(this.info){
+                return 'shadow-right'
+            } else {
+                return 'shadow-left'
+            }
+        }
+    },
+  
 }
 </script>
+
+<style lang="scss">
+  
+   .frame{
+        min-width: 100%;
+        height: 600px;
+        border: 1px rgb(211, 210, 210) solid;
+        border-radius: 8px;
+        
+    } 
+
+    .shadow-right{
+        -webkit-box-shadow: 5px 5px 25px -7px rgba(0,0,0,0.39); 
+        box-shadow: 5px 5px 25px -7px rgba(0,0,0,0.39);
+    }
+
+    .shadow-left{
+        -webkit-box-shadow: -5px 5px 25px -7px rgba(0,0,0,0.39); 
+        box-shadow: -5px 5px 25px -7px rgba(0,0,0,0.39);
+    }
+</style>

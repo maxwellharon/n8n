@@ -1,11 +1,15 @@
 <template>
   <b-card no-body>
-    <b-card-header class="pb-50">
+    <!-- <b-card-header class="pb-50">
       <h5>
         FILTERS
       </h5>
-    </b-card-header>
+    </b-card-header> -->
     <b-card-body>
+      <b-card-actions
+      title="FILTERS"
+      action-collapse
+      >
       <b-row>
         <b-col
           cols="12"
@@ -113,11 +117,13 @@
     </b-button>
         </b-col>
       </b-row>
+      </b-card-actions>
     </b-card-body>
   </b-card>
 </template>
 
 <script>
+import BCardActions from '@core/components/b-card-actions/BCardActions.vue'
 import {
   BCard, BCardHeader, BCardBody, BRow, BCol, BButton
 } from 'bootstrap-vue'
@@ -128,6 +134,7 @@ import FeatherIcon from '@core/components/feather-icon/FeatherIcon.vue'
 
 export default {
   components: {
+    BCardActions,
     BRow,
     BCol,
     BCard,
