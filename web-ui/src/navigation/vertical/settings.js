@@ -15,7 +15,7 @@ export default [{
             },
             {
                 title: 'New',
-                route: null,
+                route: 'work-flow-editor',
             },
         ]
 
