@@ -1,8 +1,4 @@
 <template>
-<div>
-   <b-card-actions
-          action-close
-        >
   <b-card
     v-if="data"
     class="card-congratulation-medal"
@@ -26,10 +22,6 @@
       alt="Medal Pic"
     />
   </b-card>
-  </b-card-actions>
-  <b-card-actions
-          action-close><iframe    src="http://172.16.10.204:3000/public/dashboard/ca007f24-7151-44cf-9683-009e57647c10"    frameborder="0"    width="925"    height="600"    allowtransparency></iframe> </b-card-actions>
-        </div>
 </template>
 
 <script>

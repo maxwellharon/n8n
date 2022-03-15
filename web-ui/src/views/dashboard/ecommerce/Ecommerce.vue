@@ -1,16 +1,63 @@
 <template>
-<div>
-     <draggable
-          tag="ul"
-          group="people"
-          class="list-group list-group-flush cursor-move"
-        >
-<ecommerce-statistics/>
-<ecommerce-medal :data="data.congratulations" />
+ <section id="dashboard-ecommerce">
+      <b-row class="match-height">
+      <b-col
+        xl="3"
+        sm="3"
+      >
+        <iframe
+    src="http://172.16.10.204:3000/public/question/f165f73d-f902-4e11-839d-327319a83c29"
+    frameborder="0"
+    allowtransparency
+></iframe>
+      </b-col>
+      <b-col
+        xl="3"
+        sm="3"
+      >
+        <iframe
+    src="http://172.16.10.204:3000/public/question/d1aabc03-462d-454d-80d1-482555a341f2"
+    frameborder="0"
+    allowtransparency
+></iframe>
+      </b-col>
+      <b-col
+        xl="3"
+        sm="3"
+      >
+        <iframe
+    src="http://172.16.10.204:3000/public/question/969a3089-4245-41f0-8736-52adfe64780e"
+    frameborder="0"
+    allowtransparency
+></iframe>
+      </b-col>
+        <b-col
+        xl="3"
+        md="6"
+      >
+       <iframe
+    src="http://172.16.10.204:3000/public/question/43f4c208-5729-4c68-a5cc-1d0f05c6bfe2"
+    frameborder="0"
+    allowtransparency
+></iframe>
+      </b-col>
+    </b-row>
 
-</draggable>
+     <b-row class="match-height">
+      <b-col
+        xl="12"
+        md="6"
+      >
+        <iframe
+    src="http://172.16.10.204:3000/public/question/571cc6db-1ef7-4e20-87db-6c0522fbb0d1"
+    frameborder="0"
+    height="600"
+    allowtransparency
+></iframe>
+      </b-col>
+      </b-row>
 
-</div>
+</section>
 </template>
 
 <script>
@@ -71,7 +118,7 @@ export default {
   },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @import '@core/scss/vue/pages/dashboard-ecommerce.scss';
 @import '@core/scss/vue/libs/chart-apex.scss';
 </style>
